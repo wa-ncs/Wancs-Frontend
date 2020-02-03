@@ -8,6 +8,7 @@ function App() {
       <Button variant="contained" color="primary">
         Hello World
       </Button>
+      <Hello name="sbim" />
     </div>
   );
 }
