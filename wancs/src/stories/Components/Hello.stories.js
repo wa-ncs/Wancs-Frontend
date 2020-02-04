@@ -1,5 +1,5 @@
 import React from 'react';
-import Hello from '../Components/Hello';
+import Hello from '../../Components/Hello';
 import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
@@ -9,6 +9,7 @@ export default {
   decorators: [withKnobs], // 애드온 적용
   parameters: {
     componentSubtitle: '"안녕하세요"라고 보여주는 컴포넌트',
+    viewport: { defaultViewport: 'iphone6' },
   },
 };
 
@@ -20,6 +21,9 @@ export const hello = () => {
 };
 hello.story = {
   name: 'Default',
+  parameters: {
+    viewport: { defaultViewport: 'iphonex' },
+  },
 };
 
 export const standard = () => <Hello name="Storybook" />;
