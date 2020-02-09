@@ -2,7 +2,8 @@ import React from 'react';
 import './App.css';
 import Hello from './Components/Hello';
 import Button from '@material-ui/core/Button';
-import BoardList from './Components/Board/BoardList';
+//import BoardList from './Components/Board/BoardList';
+import BoardList from './Components/BoardList';
 
 function App() {
   return (
