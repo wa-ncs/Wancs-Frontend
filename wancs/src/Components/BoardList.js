@@ -9,13 +9,13 @@ import Board from './Board';
 const BoardList = () => {
   const [boardList, setBoardList] = useState('');
 
+  async function getList() {
+    const response = await fetch('/v1/board');
+    const body = await response.json();
+    setBoardList(body);
+  }
+  
   useEffect(() => {
-    async function getList() {
-      const response = await fetch('/v1/board');
-      const body = await response.json();
-      console.log(body);
-      setBoardList(body);
-    }
     getList();
   }, []); //끝에 빈 배열을 넣어주면 초기 렌더링때만 실행하고 update 땐 동작안함
 
@@ -34,8 +34,8 @@ const BoardList = () => {
           </TableHead>
 
           <TableBody>
-            {boardList.map(b => {
-              return <Board key={b.boardNo} {...b} />;
+            {boardList.map(board => {
+              return <Board key={board.boardNo} {...board} />;
             })}
           </TableBody>
         </Table>
